@@ -5,10 +5,8 @@
  */
 package View;
 
-/**
- *
- * @author Felipe
- */
+import javax.swing.table.DefaultTableModel;
+
 public class ConsultaAdotar extends javax.swing.JFrame {
 
     /**
@@ -37,6 +35,7 @@ public class ConsultaAdotar extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Consulta para adoção");
         setUndecorated(true);
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -50,10 +49,15 @@ public class ConsultaAdotar extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jButton1.setText("Selecionar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null}
+
             },
             new String [] {
                 "Nome", "Animal", "Endereço", "Idade"
@@ -113,6 +117,19 @@ public class ConsultaAdotar extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       int linha =jTable1.getSelectedRow();
+       String nome = jTable1.getValueAt(linha, 0).toString();
+       String animal = jTable1.getValueAt(linha, 1).toString();
+       String endereco = jTable1.getValueAt(linha, 2).toString();
+       String idade = jTable1.getValueAt(linha, 3).toString();
+       
+       DefaultTableModel dtmVenda = dtmVenda = (DefaultTableModel) jTable2.getModel();
+       Object dados[] ={nome, animal, endereco, idade};
+       dtmVenda.addRow(dados);
+              
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -152,12 +169,10 @@ public class ConsultaAdotar extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     public static javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
+    public static javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
 }

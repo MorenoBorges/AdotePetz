@@ -8,10 +8,7 @@ package View;
 import java.awt.Color;
 import javax.swing.BorderFactory;
 
-/**
- *
- * @author Felipe
- */
+
 public class inicio extends javax.swing.JFrame {
 
     /**
@@ -45,7 +42,7 @@ public class inicio extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
+        setTitle("Menu");
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -79,6 +76,11 @@ public class inicio extends javax.swing.JFrame {
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("X");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -165,6 +167,10 @@ public class inicio extends javax.swing.JFrame {
         doar doar = new doar();
         doar.show();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        System.exit(0);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
      * @param args the command line arguments

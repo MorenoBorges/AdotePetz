@@ -52,7 +52,7 @@ public class principal extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
+        setTitle("Login");
 
         jPanel1.setBackground(new java.awt.Color(216, 191, 216));
 

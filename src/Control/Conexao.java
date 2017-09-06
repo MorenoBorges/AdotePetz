@@ -14,7 +14,7 @@ public class Conexao
     
     try
     {
-        String servidor = "jdbc:mysql://localhost:3306/adotepetz";
+        String servidor = "jdbc:mysql://localhost:3306/adotePetz";
         String user = "root";
         String senha = "";
         return DriverManager.getConnection(servidor,user,senha);

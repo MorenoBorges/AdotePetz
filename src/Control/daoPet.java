@@ -17,13 +17,17 @@ public class daoPet {
     }
     public void Incluir(pet u)
     {
-        String sql ="INSERT INTO animal (animal, vacinado, porte, rua) VALUES (?,?,?,?);";
+        String sql ="INSERT INTO animal (nome_doador,animal, vacinado, porte, rua, cor, idade, endereco) VALUES (?, ?,?,?,?,?,?,?);";
         try{
             PreparedStatement stmt = connection.prepareStatement(sql);
-            stmt.setString(1, u.getAnimal());
-            stmt.setString(2, u.getVacinado());
-            stmt.setString(3, u.getPorte());
-            stmt.setString(4, u.getCasa());
+            stmt.setString(1, u.getNome_doador());
+            stmt.setString(2, u.getAnimal());
+            stmt.setString(3, u.getVacinado());
+            stmt.setString(4, u.getPorte());
+            stmt.setString(5, u.getCasa());
+            stmt.setString(6, u.getCor());
+            stmt.setString(7, u.getIdade());
+            stmt.setString(8, u.getEndereco());
             stmt.execute();   
         }catch(SQLException e){
             throw new RuntimeException(e);
@@ -45,7 +49,7 @@ public class daoPet {
                             DefaultTableModel dtmVenda = dtmVenda = (DefaultTableModel) ca.jTable1.getModel();
                             //Salvando os dados recebidos
                             int i = dtmVenda.getRowCount()+1;
-                            Object dados[] = {result.getString("animal"), result.getString("rua"), result.getString("porte"),result.getString("vacinado"), };
+                            Object dados[] = {result.getString("nome_doador"), result.getString("animal"), result.getString("endereco"),result.getString("idade"), };
                             dtmVenda.addRow(dados);
                         }
 			

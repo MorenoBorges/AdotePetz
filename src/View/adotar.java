@@ -2,10 +2,7 @@ package View;
 import Control.daoPet;
 import Model.pet;
 
-/**
- *
- * @author Felipe
- */
+
 public class adotar extends javax.swing.JFrame {
 
     /**
@@ -48,7 +45,7 @@ public class adotar extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
+        setTitle("Adotar");
 
         jPanel1.setBackground(new java.awt.Color(216, 191, 216));
 
@@ -145,6 +142,12 @@ public class adotar extends javax.swing.JFrame {
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+            }
+        });
+
+        jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel3MouseClicked(evt);
             }
         });
 
@@ -287,6 +290,10 @@ public class adotar extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
+        System.exit(0);        // TODO add your handling code here:
+    }//GEN-LAST:event_jPanel3MouseClicked
 
     /**
      * @param args the command line arguments
